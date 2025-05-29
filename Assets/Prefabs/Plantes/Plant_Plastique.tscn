@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0y6bc7c2cvg5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Items/PickableResource.cs" id="1_xa200"]
+[ext_resource type="Resource" uid="uid://buyrurxe32h8w" path="res://Assets/Resource/Items/Plastic.tres" id="2_0nbu7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cl50o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ofya"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_jp6wm"]
+
+[node name="PlantPlastique" type="StaticBody3D" node_paths=PackedStringArray("_collisionShapes", "_meshes")]
+script = ExtResource("1_xa200")
+_collisionShapes = [NodePath("Collision")]
+_meshes = [NodePath("Plantes"), NodePath("Plantes/Plastiques")]
+ItemResource = ExtResource("2_0nbu7")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cl50o")
+
+[node name="Plantes" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7ofya")
+
+[node name="Plastiques" type="MeshInstance3D" parent="Plantes"]
+transform = Transform3D(0.0303466, 0.999539, 0, -0.999539, 0.0303466, 0, 0, 0, 1, 0, 1.02635, 0)
+mesh = SubResource("PrismMesh_jp6wm")

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=13 format=3 uid="uid://bqdkv8urjnb7t"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_37s5a"]
+[ext_resource type="Resource" uid="uid://p4de40tog3st" path="res://Assets/Resource/Items/silicon.tres" id="1_55gw1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_8jtqi"]
+[ext_resource type="Resource" uid="uid://dk7oq581ht8mm" path="res://Assets/Resource/Items/Parts/IronPlate.tres" id="3_8cy63"]
+[ext_resource type="Resource" uid="uid://bpaslb58ico7n" path="res://Assets/Resource/Items/electronics/wire.tres" id="4_54j6s"]
+[ext_resource type="Resource" uid="uid://byr4aqnqsy8qv" path="res://Assets/Resource/Items/Parts/steelRod.tres" id="5_j832k"]
+[ext_resource type="Resource" uid="uid://dx1y26rvwbf8o" path="res://Assets/Resource/Block/central/solarPanel.tres" id="6_13rlp"]
+
+[sub_resource type="Resource" id="Resource_xa2yc"]
+script = ExtResource("2_8jtqi")
+Resource = ExtResource("1_55gw1")
+Stack = 5
+
+[sub_resource type="Resource" id="Resource_x70v5"]
+script = ExtResource("2_8jtqi")
+Resource = ExtResource("3_8cy63")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_c7rgx"]
+script = ExtResource("2_8jtqi")
+Resource = ExtResource("4_54j6s")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_nhg0e"]
+script = ExtResource("2_8jtqi")
+Resource = ExtResource("5_j832k")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_5semi"]
+script = ExtResource("2_8jtqi")
+Resource = ExtResource("6_13rlp")
+Stack = 1
+
+[resource]
+script = ExtResource("1_37s5a")
+input = [SubResource("Resource_xa2yc"), SubResource("Resource_x70v5"), SubResource("Resource_c7rgx"), SubResource("Resource_nhg0e")]
+output = SubResource("Resource_5semi")
+duration = 5.0

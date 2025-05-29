@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CraftingFactoryStatic" load_steps=7 format=3 uid="uid://blqmnqkdcbi7l"]
+
+[ext_resource type="Texture2D" uid="uid://c78ue60kvlcul" path="res://Assets/Texture/block/factory/icon_fonderie.png" id="1_uem7o"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CraftingFactoryStatic.cs" id="2_ohyel"]
+[ext_resource type="Resource" uid="uid://cn77hdltbsnd3" path="res://Assets/Resource/recipe/factory/fonderie/ironRecipe.tres" id="2_y5y2w"]
+[ext_resource type="Resource" uid="uid://cljw2umhmxk7" path="res://Assets/Resource/recipe/factory/fonderie/copperRecipe.tres" id="2_yr34e"]
+[ext_resource type="Resource" uid="uid://crnlbjdoekmte" path="res://Assets/Resource/recipe/factory/fonderie/goldRecipe.tres" id="3_dv25u"]
+[ext_resource type="Resource" uid="uid://b76wcrb8mlkfb" path="res://Assets/Resource/recipe/factory/fonderie/siliconRecipe.tres" id="5_x5thu"]
+
+[resource]
+script = ExtResource("2_ohyel")
+recipeList = Array[Object]([ExtResource("2_yr34e"), ExtResource("3_dv25u"), ExtResource("2_y5y2w"), ExtResource("5_x5thu")])
+electricalCost = 10
+pollutionIndex = 10
+tier = 1
+_maxStack = 1
+_scenePath = "res://Assets/Prefabs/Factory/Fonderie.tscn"
+_inventoryIcon = ExtResource("1_uem7o")
+_description = ""

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0p10efv0exw4"]
+
+[ext_resource type="PackedScene" uid="uid://cibeh5wsnp7e4" path="res://Assets/Model/map/log_stack.glb" id="1_41fjo"]
+[ext_resource type="Script" path="res://Assets/Scripts/Block/playerStructure/BaseStructure.cs" id="2_fb67w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2lidy"]
+radius = 0.545291
+height = 1.82304
+
+[node name="log_stack2" groups=["AXE"] instance=ExtResource("1_41fjo")]
+script = ExtResource("2_fb67w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/log_stack" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/log_stack/StaticBody3D" index="0"]
+transform = Transform3D(2.01376, 0, 0, 0, 0.0209469, -2.01365, 0, 2.01365, 0.0209469, 0, 0.730478, 0)
+shape = SubResource("CapsuleShape3D_2lidy")

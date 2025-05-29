@@ -1,5 +1,15 @@
 # Godot 4+ specific ignores
 .godot/
+/android/
+*.sln
+*.csproj
+.vs/
+*.import
+*.mono/ 
+*.vpp.bak_*
+*.vpp.lck
+.vscode/
+.idea/
 
 # Godot-specific ignores
 .import/
@@ -13,3 +23,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+

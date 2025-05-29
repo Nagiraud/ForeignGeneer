@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=11 format=3 uid="uid://ur4csocgao12"]
+
+[ext_resource type="Resource" uid="uid://buyrurxe32h8w" path="res://Assets/Resource/Items/Parts/Plastic.tres" id="1_37lbo"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_wpnlh"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_5wo4d"]
+[ext_resource type="Resource" uid="uid://c8kq3ixfl3xtd" path="res://Assets/Resource/Items/electronics/led.tres" id="3_1nbhb"]
+[ext_resource type="Resource" uid="uid://bpaslb58ico7n" path="res://Assets/Resource/Items/electronics/wire.tres" id="4_c3lfy"]
+[ext_resource type="Resource" uid="uid://cwueaxanchbqm" path="res://Assets/Resource/Items/electronics/motherboard.tres" id="5_goydv"]
+
+[sub_resource type="Resource" id="Resource_drrv4"]
+script = ExtResource("2_5wo4d")
+Resource = ExtResource("1_37lbo")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_eejcb"]
+script = ExtResource("2_5wo4d")
+Resource = ExtResource("3_1nbhb")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_oo7s2"]
+script = ExtResource("2_5wo4d")
+Resource = ExtResource("4_c3lfy")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_mpyfx"]
+script = ExtResource("2_5wo4d")
+Resource = ExtResource("5_goydv")
+Stack = 1
+
+[resource]
+script = ExtResource("1_wpnlh")
+input = [SubResource("Resource_drrv4"), SubResource("Resource_eejcb"), SubResource("Resource_oo7s2")]
+output = SubResource("Resource_mpyfx")
+duration = 15.0

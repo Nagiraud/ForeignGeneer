@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://mev7gyqapq67"]
+
+[ext_resource type="Texture2D" uid="uid://dycwbk3nywp04" path="res://Assets/Texture/items/Parts/turbine_blade.png" id="1_muqt2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_vsreh"]
+
+[resource]
+resource_name = "fan"
+script = ExtResource("1_vsreh")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_muqt2")
+_description = ""

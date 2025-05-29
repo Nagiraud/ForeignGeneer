@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dx1y26rvwbf8o"]
+
+[ext_resource type="Texture2D" uid="uid://bktscu74apq7y" path="res://Assets/Texture/block/factory/icon_solar_panel.png" id="1_88v3l"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/FactoryStatic.cs" id="3_qokdu"]
+
+[resource]
+script = ExtResource("3_qokdu")
+electricalCost = 5
+pollutionIndex = 5
+tier = 1
+_maxStack = 1
+_scenePath = "res://Assets/Prefabs/central/solarPanel.tscn"
+_inventoryIcon = ExtResource("1_88v3l")
+_description = ""

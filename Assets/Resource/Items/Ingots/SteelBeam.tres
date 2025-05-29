@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://cwvogd2381okq"]
+
+[ext_resource type="Texture2D" uid="uid://dxe5dcu8fg0sq" path="res://Assets/Texture/items/Ingots/ingot_steel.png" id="1_8whwk"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="2_m8gws"]
+
+[resource]
+resource_name = "SteelBeam"
+script = ExtResource("2_m8gws")
+_maxStack = 99
+_scenePath = "res://Assets/Prefabs/Ingots/SteelBeam.tscn"
+_inventoryIcon = ExtResource("1_8whwk")
+_description = ""

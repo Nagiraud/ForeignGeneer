@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://bk3orfrl56u1j"]
+
+[ext_resource type="Resource" uid="uid://r66hx7yuyqw4" path="res://Assets/Resource/Items/planks.tres" id="1_va3e1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_wf0ww"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_arwdd"]
+
+[sub_resource type="Resource" id="Resource_i7tln"]
+script = ExtResource("2_arwdd")
+Resource = ExtResource("1_va3e1")
+Stack = 8
+
+[sub_resource type="Resource" id="Resource_dyt26"]
+script = ExtResource("2_arwdd")
+Stack = 0
+
+[resource]
+script = ExtResource("1_wf0ww")
+input = [SubResource("Resource_i7tln")]
+output = SubResource("Resource_dyt26")
+duration = 2.0

@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://cshkjrjlmetnd"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/slot/HotbarSlotUi.cs" id="1_xl5ub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7s45"]
+bg_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.710218, 0.184957, 0.163053, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35nxl"]
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.686804, 0.157077, 0.164742, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n1ty"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="HotBarSlot" type="Panel" node_paths=PackedStringArray("_textureRect", "_label")]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.1
+offset_right = 6.4
+offset_bottom = -0.800003
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7s45")
+script = ExtResource("1_xl5ub")
+_textureRect = NodePath("icon")
+_label = NodePath("Label")
+_selectedStyle = SubResource("StyleBoxFlat_35nxl")
+_normalStyle = SubResource("StyleBoxFlat_5n1ty")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+vertical_alignment = 1

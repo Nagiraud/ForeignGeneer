@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsp7adyefetyk"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Items/PickableResource.cs" id="1_d38p4"]
+[ext_resource type="ArrayMesh" uid="uid://dbeuxv3deutyf" path="res://Assets/Model/Nourriture/Berry/Bush.tres" id="1_k6ocf"]
+[ext_resource type="Resource" uid="uid://oqrcmx10cv8t" path="res://Assets/Model/Nourriture/Berry/Berries.tres" id="2_oghbt"]
+[ext_resource type="ArrayMesh" uid="uid://sldm8ebnryfm" path="res://Assets/Model/Nourriture/Berry/Berry.tres" id="2_x12k1"]
+[ext_resource type="Script" path="res://Assets/Scripts/World/LOD.cs" id="4_qqrng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rymx3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cy32j"]
+
+[node name="Bush_Berry" type="StaticBody3D" node_paths=PackedStringArray("_collisionShapes", "_meshes")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_d38p4")
+_collisionShapes = [NodePath("Collision")]
+_meshes = [NodePath("Bush"), NodePath("Bush/Berry")]
+ItemResource = ExtResource("2_oghbt")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rymx3")
+
+[node name="Bush" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_k6ocf")
+script = ExtResource("4_qqrng")
+lodMeshPaths = Array[NodePath]([NodePath("."), NodePath("../MeshInstance3D")])
+distances = PackedFloat32Array(50, 300)
+
+[node name="Berry" type="MeshInstance3D" parent="Bush"]
+mesh = ExtResource("2_x12k1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_cy32j")

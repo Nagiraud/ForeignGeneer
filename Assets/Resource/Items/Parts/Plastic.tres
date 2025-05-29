@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://buyrurxe32h8w"]
+
+[ext_resource type="Texture2D" uid="uid://dtlfkrjukgy2s" path="res://Assets/Texture/items/icon_plastic.png" id="1_oumpe"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_ym54k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgaph"]
+albedo_color = Color(0.0197638, 0.195132, 0.239478, 1)
+
+[resource]
+resource_name = "Plastic"
+script = ExtResource("1_ym54k")
+_maxStack = 99
+_scenePath = "res://Assets/Prefabs/Ingots/Plastic.tscn"
+_material = SubResource("StandardMaterial3D_pgaph")
+_inventoryIcon = ExtResource("1_oumpe")
+_description = ""

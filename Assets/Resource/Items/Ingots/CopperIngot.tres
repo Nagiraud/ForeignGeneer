@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=4 format=3 uid="uid://bp5ep2ssoix8n"]
+
+[ext_resource type="Texture2D" uid="uid://ck0b0l2v0ucrf" path="res://Assets/Texture/items/Ingots/lingot_copper.png" id="1_l3cbu"]
+[ext_resource type="Material" uid="uid://daritwjagyq0t" path="res://Assets/Texture/items/Ingots/ironIngot.tres" id="2_6itel"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="3_4fl21"]
+
+[resource]
+resource_name = "Copper Ingot"
+script = ExtResource("3_4fl21")
+_maxStack = 99
+_scenePath = "res://Assets/Prefabs/Ingots/Ingot.tscn"
+_material = ExtResource("2_6itel")
+_inventoryIcon = ExtResource("1_l3cbu")
+_description = "Lingot de cuivre, trés bon conducteur d'éléctricité"

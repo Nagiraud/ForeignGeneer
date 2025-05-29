@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3pat7eqnpbry"]
+
+[ext_resource type="Shader" path="res://Assets/Daltonisme.gdshader" id="1_7qnbc"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/filterManager.cs" id="1_orj0c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d3go"]
+shader = ExtResource("1_7qnbc")
+shader_parameter/mode = 1
+shader_parameter/intensity = 1.0
+
+[node name="daltonismFilter" type="CanvasLayer" node_paths=PackedStringArray("filter")]
+script = ExtResource("1_orj0c")
+filter = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1d3go")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

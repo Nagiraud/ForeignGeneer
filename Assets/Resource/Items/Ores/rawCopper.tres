@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=2 format=3 uid="uid://cbfbxj7kl3wpu"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_uu0a1"]
+
+[resource]
+resource_name = "rawCopper"
+script = ExtResource("1_uu0a1")
+_maxStack = 99
+_scenePath = ""
+_description = ""

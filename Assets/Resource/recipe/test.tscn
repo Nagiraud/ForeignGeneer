@@ -1,0 +1,90 @@
+[gd_scene load_steps=19 format=3 uid="uid://0r4bxj3uot8q"]
+
+[ext_resource type="Texture2D" uid="uid://d18dvnddv3lh3" path="res://Assets/Texture/environnement/damier.png" id="1_ermdq"]
+[ext_resource type="PackedScene" uid="uid://pmk1ja4lcf6d" path="res://Assets/Prefabs/personnage.tscn" id="1_qfhkf"]
+[ext_resource type="PackedScene" uid="uid://d4kum67w04bia" path="res://Assets/Prefabs/Factory/CraftingTable.tscn" id="2_kj6vs"]
+[ext_resource type="PackedScene" uid="uid://c6xr5ux6th5oq" path="res://Assets/Prefabs/manager.tscn" id="2_kk7j7"]
+[ext_resource type="PackedScene" uid="uid://c0y6bc7c2cvg5" path="res://Assets/Prefabs/Plantes/Plant_Plastique.tscn" id="4_4vinv"]
+[ext_resource type="PackedScene" uid="uid://cw6d4kvnndb7s" path="res://Assets/Prefabs/Ingots/BreakableIron.tscn" id="4_84dqk"]
+[ext_resource type="PackedScene" uid="uid://bxncduxmicfgw" path="res://Assets/Prefabs/central/centraleBiomasse.tscn" id="4_na8ne"]
+[ext_resource type="PackedScene" uid="uid://ceeumu8ai6jxw" path="res://Assets/Prefabs/Factory/Fonderie.tscn" id="5_phnvt"]
+[ext_resource type="PackedScene" uid="uid://hrehdr5te668" path="res://Assets/Prefabs/central/windTurbine.tscn" id="6_612tm"]
+[ext_resource type="PackedScene" uid="uid://dsp7adyefetyk" path="res://Assets/Model/Nourriture/Berry/bush_berry.tscn" id="8_1ea4u"]
+[ext_resource type="PackedScene" uid="uid://ktfq1ucdt8rt" path="res://Assets/Prefabs/Ingots/BreakableCopper.tscn" id="11_f034v"]
+[ext_resource type="PackedScene" uid="uid://cn0y2hdd0ln3x" path="res://Assets/Prefabs/Ingots/BreakableGold.tscn" id="12_c103k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ot5o"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_3was3"]
+sky_material = SubResource("ProceduralSkyMaterial_4ot5o")
+
+[sub_resource type="Environment" id="Environment_gfbcw"]
+background_mode = 2
+sky = SubResource("Sky_3was3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wv613"]
+size = Vector2(2500, 2500)
+subdivide_width = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7p5m"]
+albedo_color = Color(0.77, 0.2541, 0.451862, 1)
+albedo_texture = ExtResource("1_ermdq")
+uv1_scale = Vector3(30, 30, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lneut"]
+size = Vector3(2500, 1, 2500)
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gfbcw")
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+
+[node name="TerrainMesh" type="MeshInstance3D" parent="Terrain"]
+lod_bias = 0.001
+mesh = SubResource("PlaneMesh_wv613")
+surface_material_override/0 = SubResource("StandardMaterial3D_t7p5m")
+
+[node name="TerrainCollision" type="CollisionShape3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500162, 0)
+shape = SubResource("BoxShape3D_lneut")
+
+[node name="Manager" parent="." instance=ExtResource("2_kk7j7")]
+
+[node name="Personnage" parent="." instance=ExtResource("1_qfhkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102576, 0.135)
+
+[node name="worldStructure" type="Node" parent="."]
+
+[node name="static" type="Node" parent="worldStructure"]
+
+[node name="IronOre" parent="worldStructure/static" instance=ExtResource("4_84dqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.00866163, 0)
+
+[node name="central_biomasse" parent="worldStructure/static" instance=ExtResource("4_na8ne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.61066)
+
+[node name="Fonderie" parent="worldStructure/static" instance=ExtResource("5_phnvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98275, 0, -8.61066)
+
+[node name="wind_turbine" parent="worldStructure/static" instance=ExtResource("6_612tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.824, 0, -7.826)
+
+[node name="CraftingTable" parent="worldStructure/static" instance=ExtResource("2_kj6vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15087, 0.521425, -9.06228)
+
+[node name="Bush_Berry" parent="worldStructure/static" instance=ExtResource("8_1ea4u")]
+
+[node name="PlantPlastique" parent="worldStructure/static" instance=ExtResource("4_4vinv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84612, 0, 0)
+
+[node name="CopperOre" parent="worldStructure/static" instance=ExtResource("11_f034v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="GoldOre" parent="worldStructure/static" instance=ExtResource("12_c103k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)

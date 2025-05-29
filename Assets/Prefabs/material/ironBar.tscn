@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://j40ao2e0gjhi"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Items/ItemAuSol.cs" id="1_4620b"]
+[ext_resource type="ArrayMesh" uid="uid://b2plk1yq7e108" path="res://Assets/Model/material/ironBar.obj" id="2_mn4ih"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lqan"]
+albedo_color = Color(0.162066, 0.162066, 0.162066, 1)
+metallic = 0.34
+metallic_specular = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwbg0"]
+size = Vector3(0.421143, 0.309631, 0.503906)
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(0.993625, 0, 0, 0, 0.993625, 0, 0, 0, 0.993625, 0, 0, 0)
+script = ExtResource("1_4620b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_8lqan")
+mesh = ExtResource("2_mn4ih")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00109863, 0.102142, 0.00292969)
+shape = SubResource("BoxShape3D_mwbg0")
+disabled = true

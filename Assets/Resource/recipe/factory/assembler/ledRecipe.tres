@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://bgsshqjjrxkeg"]
+
+[ext_resource type="Resource" uid="uid://bpaslb58ico7n" path="res://Assets/Resource/Items/electronics/wire.tres" id="1_ldss7"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_2grui"]
+[ext_resource type="Resource" uid="uid://buyrurxe32h8w" path="res://Assets/Resource/Items/Parts/Plastic.tres" id="3_haqhh"]
+[ext_resource type="Resource" uid="uid://c8kq3ixfl3xtd" path="res://Assets/Resource/Items/electronics/led.tres" id="4_dlq04"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="5_6p41q"]
+
+[sub_resource type="Resource" id="Resource_ikenp"]
+script = ExtResource("2_2grui")
+Resource = ExtResource("1_ldss7")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_3rib8"]
+script = ExtResource("2_2grui")
+Resource = ExtResource("3_haqhh")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_m8dhy"]
+script = ExtResource("2_2grui")
+Resource = ExtResource("4_dlq04")
+Stack = 1
+
+[resource]
+script = ExtResource("5_6p41q")
+input = [SubResource("Resource_ikenp"), SubResource("Resource_3rib8")]
+output = SubResource("Resource_m8dhy")
+duration = 2.0

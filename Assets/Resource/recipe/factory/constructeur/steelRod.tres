@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://cpjw2s3us2qup"]
+
+[ext_resource type="Resource" uid="uid://cwvogd2381okq" path="res://Assets/Resource/Items/Ingots/SteelBeam.tres" id="1_i5j11"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_ygoun"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_8x6yc"]
+[ext_resource type="Resource" uid="uid://byr4aqnqsy8qv" path="res://Assets/Resource/Items/Parts/steelRod.tres" id="3_3bmj1"]
+
+[sub_resource type="Resource" id="Resource_n7vt8"]
+script = ExtResource("2_8x6yc")
+Resource = ExtResource("1_i5j11")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_rv2nh"]
+script = ExtResource("2_8x6yc")
+Resource = ExtResource("3_3bmj1")
+Stack = 3
+
+[resource]
+script = ExtResource("1_ygoun")
+input = [SubResource("Resource_n7vt8")]
+output = SubResource("Resource_rv2nh")
+duration = 1.0

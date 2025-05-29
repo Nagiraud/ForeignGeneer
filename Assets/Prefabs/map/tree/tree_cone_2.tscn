@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bccciw3qli2lf"]
+
+[ext_resource type="PackedScene" uid="uid://cyp52sthaame7" path="res://Assets/Model/map/tree_cone.glb" id="1_pqnxv"]
+[ext_resource type="Script" path="res://Assets/Scripts/Block/playerStructure/BaseStructure.cs" id="2_pws21"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vidno"]
+size = Vector3(0.512756, 6.8335, 0.641479)
+
+[node name="tree_cone2" groups=["AXE"] instance=ExtResource("1_pqnxv")]
+script = ExtResource("2_pws21")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/tree_cone" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/tree_cone/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0210876, 3.54321, 0.00628662)
+shape = SubResource("BoxShape3D_vidno")

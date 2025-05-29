@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://tl4unfqygv8p"]
+
+[ext_resource type="Texture2D" uid="uid://cti75qfem7c0e" path="res://Assets/Texture/items/Ores/raw_gold.png" id="1_hdnmb"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_umcn8"]
+
+[resource]
+resource_name = "rawGold"
+script = ExtResource("1_umcn8")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_hdnmb")
+_description = ""

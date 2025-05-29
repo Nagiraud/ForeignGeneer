@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddp7q1ns3jgci"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Central/CentralUi.cs" id="1_cojqr"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="2_724ab"]
+[ext_resource type="PackedScene" uid="uid://pvecjgib4vbr" path="res://Assets/Scenes/UI/Inventory/inventoryUi.tscn" id="3_n332v"]
+
+[node name="CentralUi" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.987463)
+size_flags_horizontal = 8
+script = ExtResource("1_cojqr")
+_slotUi = ExtResource("2_724ab")
+
+[node name="InventoryUi" parent="." instance=ExtResource("3_n332v")]
+layout_mode = 1
+anchor_left = 0.1
+anchor_right = 0.4
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Machine" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Machine"]
+modulate = Color(0.29219, 0.29219, 0.29219, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996279)
+color = Color(0.869652, 0.832719, 0.842073, 1)
+
+[node name="Container" type="VBoxContainer" parent="Machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.427
+anchor_right = 0.65
+anchor_bottom = 0.7
+offset_left = -2.0
+offset_top = -18.5
+offset_right = 2.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="InputList" type="HBoxContainer" parent="Machine/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CraftText" type="TextEdit" parent="Machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.2
+offset_right = -0.0639648
+offset_bottom = 0.223999
+grow_horizontal = 2
+editable = false
+
+[node name="Button" type="Button" parent="Machine"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+rotation = -0.00263166
+text = "< --"
+
+[node name="Quantity" type="Label" parent="Machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = -172.8
+offset_top = -129.6
+offset_right = 164.2
+offset_bottom = -106.6
+grow_horizontal = 2
+grow_vertical = 2
+text = "Puissance : 0 kW/s|| Électricité totale : 0 kW/s"
+horizontal_alignment = 1
+
+[node name="close" type="Button" parent="Machine"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_right = 1.0
+anchor_bottom = 0.03
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "X"
+
+[connection signal="button_down" from="Machine/close" to="." method="close"]

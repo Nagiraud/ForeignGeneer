@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ccae2734dq4jv"]
+
+[ext_resource type="Texture2D" uid="uid://dpg0jl6l2buhu" path="res://Assets/Texture/block/factory/icon_eolienne.png" id="1_hm6y1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/FactoryStatic.cs" id="3_gf2fp"]
+
+[resource]
+script = ExtResource("3_gf2fp")
+electricalCost = 5
+pollutionIndex = 5
+tier = 1
+_maxStack = 1
+_scenePath = "res://Assets/Prefabs/central/windTurbine.tscn"
+_inventoryIcon = ExtResource("1_hm6y1")
+_description = ""

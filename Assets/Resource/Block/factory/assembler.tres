@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CraftingFactoryStatic" load_steps=10 format=3 uid="uid://dmvxbgok62ndk"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CraftingFactoryStatic.cs" id="1_cv5qk"]
+[ext_resource type="Resource" uid="uid://cef7sbp2jxbjg" path="res://Assets/Resource/recipe/factory/assembler/windTurbineRecipe.tres" id="1_fqm4j"]
+[ext_resource type="Resource" uid="uid://dp78nkhu6r1qv" path="res://Assets/Resource/recipe/factory/assembler/steelRecipe.tres" id="2_yvh3q"]
+[ext_resource type="Resource" uid="uid://bqdkv8urjnb7t" path="res://Assets/Resource/recipe/factory/assembler/solarPanelRecipe.tres" id="3_fuohp"]
+[ext_resource type="Resource" uid="uid://bp7w30ko083st" path="res://Assets/Resource/recipe/factory/assembler/pcbRecipe.tres" id="4_5un3g"]
+[ext_resource type="Resource" uid="uid://ur4csocgao12" path="res://Assets/Resource/recipe/factory/assembler/motherboardRecipe.tres" id="5_o3sws"]
+[ext_resource type="Resource" uid="uid://bgsshqjjrxkeg" path="res://Assets/Resource/recipe/factory/assembler/ledRecipe.tres" id="6_dkvt7"]
+[ext_resource type="Resource" uid="uid://tv51g6wbgx5v" path="res://Assets/Resource/recipe/factory/assembler/fanRecipe.tres" id="7_vxxpt"]
+[ext_resource type="Resource" uid="uid://daob83rubbprp" path="res://Assets/Resource/recipe/factory/assembler/BiomassGenRecipe.tres" id="8_mtowl"]
+
+[resource]
+script = ExtResource("1_cv5qk")
+recipeList = Array[Object]([ExtResource("1_fqm4j"), ExtResource("2_yvh3q"), ExtResource("3_fuohp"), ExtResource("4_5un3g"), ExtResource("5_o3sws"), ExtResource("6_dkvt7"), ExtResource("7_vxxpt"), ExtResource("8_mtowl")])
+electricalCost = 0
+pollutionIndex = 0
+tier = 0
+_maxStack = 0
+_scenePath = ""
+_description = ""

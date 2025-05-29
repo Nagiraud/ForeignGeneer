@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://igq70ebc8pcg"]
+
+[ext_resource type="PackedScene" uid="uid://pvecjgib4vbr" path="res://Assets/Scenes/UI/Inventory/inventoryUi.tscn" id="1_ipoj5"]
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Factory/CraftingTableUi.cs" id="1_nspl2"]
+[ext_resource type="PackedScene" uid="uid://b8vurq8pm0g60" path="res://Assets/Scenes/UI/Recipe/CraftingRecipeChoiceUi.tscn" id="2_5qwxa"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="3_m2jm3"]
+
+[node name="CraftingTableUi" type="Control" node_paths=PackedStringArray("_slot", "_gridContainer", "_progressBar")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nspl2")
+_slot = NodePath("Machine/Container/SlotUI")
+_gridContainer = NodePath("Machine/Container/ScrollContainer/GridContainer")
+_progressBar = NodePath("Machine/Container/ProgressBar")
+_recipeUiPacked = ExtResource("2_5qwxa")
+
+[node name="InventoryUi" parent="." instance=ExtResource("1_ipoj5")]
+layout_mode = 1
+anchor_left = 0.1
+anchor_right = 0.4
+offset_right = 2.09604
+offset_bottom = 1.68799
+
+[node name="Machine" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Machine"]
+modulate = Color(0.29219, 0.29219, 0.29219, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996279)
+color = Color(0.870588, 0.831373, 0.843137, 1)
+
+[node name="Container" type="HBoxContainer" parent="Machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="Machine/Container/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SlotUI" parent="Machine/Container" instance=ExtResource("3_m2jm3")]
+layout_mode = 2
+
+[node name="close" type="Button" parent="Machine"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_right = 1.0
+anchor_bottom = 0.03
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "X"
+
+[connection signal="button_down" from="Machine/close" to="." method="close"]

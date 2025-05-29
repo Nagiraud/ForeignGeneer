@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://qeurt0wcljsl"]
+
+[ext_resource type="Texture2D" uid="uid://dllqs356mdp7u" path="res://Assets/Texture/items/Parts/material_stick_iron.png" id="1_cpgu6"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_m77ou"]
+
+[resource]
+resource_name = "IronRod"
+script = ExtResource("1_m77ou")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_cpgu6")
+_description = ""

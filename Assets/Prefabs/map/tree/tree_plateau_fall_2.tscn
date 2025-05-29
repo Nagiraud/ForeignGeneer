@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvfnlnm1fikr0"]
+
+[ext_resource type="PackedScene" uid="uid://pempp6ed7rra" path="res://Assets/Model/map/tree_plateau_fall.glb" id="1_qlafl"]
+[ext_resource type="Script" path="res://Assets/Scripts/Block/playerStructure/BaseStructure.cs" id="2_44mmf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8lsj"]
+size = Vector3(0.638611, 5.46722, 0.61853)
+
+[node name="tree_plateau_fall2" groups=["AXE"] instance=ExtResource("1_qlafl")]
+script = ExtResource("2_44mmf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/tree_plateau_fall" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/tree_plateau_fall/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00186157, 2.81119, -0.017395)
+shape = SubResource("BoxShape3D_c8lsj")

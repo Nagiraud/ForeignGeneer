@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4wxg6qp6gff"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdkep"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.136826, 0.136826, 0.136826, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CircuitSlotUi" type="PanelContainer"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vdkep")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d006ghymb3j35"]
+
+[ext_resource type="PackedScene" uid="uid://dfey30nwofr10" path="res://Assets/Model/block/factory/assembleur.glb" id="1_rxg1g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uex2o"]
+size = Vector3(1.41364, 0.831299, 1.39038)
+
+[node name="Assembler" type="StaticBody3D"]
+
+[node name="assembleur" parent="." instance=ExtResource("1_rxg1g")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000823975, 0.401793, 0.00427246)
+shape = SubResource("BoxShape3D_uex2o")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkpvxveis4nm1"]
+
+[ext_resource type="PackedScene" uid="uid://bh6k0upcfj5r4" path="res://Assets/Model/map/statue_column.glb" id="1_fy8y1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3t7v"]
+size = Vector3(1.09631, 4.99255, 1.10492)
+
+[node name="statue_column2" instance=ExtResource("1_fy8y1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/statue_column" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/statue_column/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000183105, 2.40609, -0.0027771)
+shape = SubResource("BoxShape3D_l3t7v")

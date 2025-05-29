@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvoaib2hksqyq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Inventory/OverlayItemInformation.cs" id="1_uvhme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1s75"]
+bg_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="OverlayItemInformation" type="Control" node_paths=PackedStringArray("_nameLabel", "_descriptionLabel", "_icon")]
+visibility_layer = 515
+z_index = 10
+layout_mode = 3
+anchor_left = 0.3
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_uvhme")
+_nameLabel = NodePath("name")
+_descriptionLabel = NodePath("desc")
+_icon = NodePath("TextureRect")
+
+[node name="Panel" type="Panel" parent="."]
+light_mask = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w1s75")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.17
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://r66hx7yuyqw4"]
+
+[ext_resource type="Texture2D" uid="uid://db12ff7p8ql8b" path="res://Assets/Texture/items/wood_plank.png" id="1_4iiht"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_av187"]
+
+[resource]
+resource_name = "Plank"
+script = ExtResource("1_av187")
+_maxStack = 0
+_scenePath = ""
+_inventoryIcon = ExtResource("1_4iiht")
+_description = ""

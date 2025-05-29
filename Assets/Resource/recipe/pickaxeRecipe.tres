@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://t32aacuurs0o"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_34uuj"]
+[ext_resource type="Resource" uid="uid://bh0wee65eoi72" path="res://Assets/Resource/Items/Ingots/IronIngot.tres" id="1_xev1k"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_ktj73"]
+[ext_resource type="Resource" uid="uid://r66hx7yuyqw4" path="res://Assets/Resource/Items/planks.tres" id="3_1dgt2"]
+[ext_resource type="Resource" uid="uid://dh5deefslcxx0" path="res://Assets/Resource/Items/outils/pickaxe.tres" id="4_5wleo"]
+
+[sub_resource type="Resource" id="Resource_632n0"]
+script = ExtResource("2_ktj73")
+Resource = ExtResource("1_xev1k")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_jwqbj"]
+script = ExtResource("2_ktj73")
+Resource = ExtResource("3_1dgt2")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_b3h1y"]
+script = ExtResource("2_ktj73")
+Resource = ExtResource("4_5wleo")
+Stack = 1
+
+[resource]
+script = ExtResource("1_34uuj")
+input = [SubResource("Resource_632n0"), SubResource("Resource_jwqbj")]
+output = SubResource("Resource_b3h1y")
+duration = 2.5

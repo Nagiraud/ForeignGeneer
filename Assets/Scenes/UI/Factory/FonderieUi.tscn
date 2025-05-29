@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu77v5jkyswnn"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Factory/FonderieUi.cs" id="1_vtnb6"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="2_o6ue4"]
+[ext_resource type="PackedScene" uid="uid://pvecjgib4vbr" path="res://Assets/Scenes/UI/Inventory/inventoryUi.tscn" id="3_v6afh"]
+
+[node name="FonderieUi" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.987463)
+size_flags_horizontal = 8
+script = ExtResource("1_vtnb6")
+_slotUi = ExtResource("2_o6ue4")
+
+[node name="InventoryUi" parent="." instance=ExtResource("3_v6afh")]
+layout_mode = 1
+anchor_left = 0.1
+anchor_right = 0.4
+offset_right = 2.09604
+offset_bottom = 1.68799
+
+[node name="Machine" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Machine"]
+modulate = Color(0.29219, 0.29219, 0.29219, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996279)
+color = Color(0.870588, 0.831373, 0.843137, 1)
+
+[node name="Container" type="HBoxContainer" parent="Machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_bottom = 0.236778
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="InputList" type="VBoxContainer" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="OutputContainer" type="VBoxContainer" parent="Machine/Container"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="CraftText" type="TextEdit" parent="Machine"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.2
+offset_right = -0.0959473
+offset_bottom = 0.233597
+grow_horizontal = 2
+grow_vertical = 0
+editable = false
+
+[node name="Button" type="Button" parent="Machine"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+rotation = -0.00263166
+text = "< --"
+
+[node name="close" type="Button" parent="Machine"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_right = 1.0
+anchor_bottom = 0.03
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "X"
+
+[connection signal="button_down" from="Machine/close" to="." method="close"]

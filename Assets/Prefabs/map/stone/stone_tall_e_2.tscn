@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b85ptuuyaf4ae"]
+
+[ext_resource type="PackedScene" uid="uid://b4jicdqg058pm" path="res://Assets/Model/map/stone_tallE.glb" id="1_vk7rj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5e7sr"]
+points = PackedVector3Array(1.14049, 0, 0.65846, 0.718497, 1.91223, 0.414825, 0, 0, 1.31692, 1.14049, 0, -0.658718, 0.584309, 2.21892, 0.334902, 0, 1.91223, 0.829649, 0.718497, 1.91223, -0.415082, -0.000223279, 0, 1.31692, 0, 0, -1.31692, 0, 1.91223, -0.829907, 0.0310351, 2.21892, 0.654335, 0.584309, 2.21892, -0.303964, -0.313477, 2.21892, 0.455559, -0.718721, 1.91223, 0.414825, -1.14049, 0, 0.65846, -0.000223279, 0, -1.31692, -0.570466, 0, -0.987948, -0.359472, 1.91223, -0.622366, 0.213004, 2.21892, -0.518209, -0.718721, 1.91223, 0, -1.14049, 0, -0.00025785)
+
+[node name="stone_tallE2" instance=ExtResource("1_vk7rj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/stone_tallE" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/stone_tallE/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_5e7sr")

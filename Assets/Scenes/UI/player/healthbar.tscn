@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxy583qe2yu3p"]
+
+[ext_resource type="Texture2D" uid="uid://b1lh0jkem50yr" path="res://Assets/Texture/ui/healthBar/CircularProgressBar.png" id="1_1lb0b"]
+[ext_resource type="Script" path="res://Assets/Scripts/Player/HealthBar.cs" id="1_2tskg"]
+[ext_resource type="Texture2D" uid="uid://dltb3id7xh7uc" path="res://Assets/Texture/ui/healthBar/rond_noir.png" id="2_61aip"]
+[ext_resource type="Texture2D" uid="uid://df5f70ujr01f2" path="res://Assets/Texture/ui/healthBar/pngHunger.png" id="3_lvlu3"]
+[ext_resource type="Texture2D" uid="uid://y5os6wh2ftgu" path="res://Assets/Texture/ui/healthBar/pngHealth.png" id="4_fj60h"]
+[ext_resource type="Texture2D" uid="uid://csbgi2vnu4q7n" path="res://Assets/Texture/ui/healthBar/pngPollution2.png" id="5_klnu4"]
+
+[node name="CircularProgressBar" type="TextureProgressBar" node_paths=PackedStringArray("healthBar", "pollutionBar", "hungerBar")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1.0
+grow_vertical = 0
+script = ExtResource("1_2tskg")
+HealthProgressBar = NodePath("TextureProgressHealth")
+PollutionProgressBar = NodePath("TextureProgressPollution")
+HungerProgressBar = NodePath("TextureProgressHunger")
+
+[node name="RondNoir" type="Sprite2D" parent="."]
+visibility_layer = 786433
+position = Vector2(86, -70)
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("2_61aip")
+
+[node name="RondNoir2" type="Sprite2D" parent="."]
+position = Vector2(88.9999, -188)
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("2_61aip")
+
+[node name="RondNoir3" type="Sprite2D" parent="."]
+position = Vector2(209, -68)
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("2_61aip")
+
+[node name="TextureProgressHealth" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -121.0
+offset_right = 341.0
+offset_bottom = 179.0
+scale = Vector2(0.3, 0.3)
+value = 100.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 4
+texture_under = ExtResource("1_1lb0b")
+texture_progress = ExtResource("1_1lb0b")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0.815686, 0.117647, 0.0901961, 1)
+
+[node name="PngHealth" type="Sprite2D" parent="TextureProgressHealth"]
+position = Vector2(146.667, 153.333)
+scale = Vector2(0.25, 0.2786)
+texture = ExtResource("4_fj60h")
+
+[node name="TextureProgressPollution" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -239.0
+offset_right = 344.0
+offset_bottom = 61.0
+scale = Vector2(0.3, 0.3)
+value = 50.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 4
+texture_under = ExtResource("1_1lb0b")
+texture_progress = ExtResource("1_1lb0b")
+tint_under = Color(0.0832061, 0.00765381, 5.09885e-07, 1)
+tint_progress = Color(0.458486, 0.564277, 1, 0.858824)
+
+[node name="PngPollution2" type="Sprite2D" parent="TextureProgressPollution"]
+position = Vector2(150, 140)
+scale = Vector2(0.226071, 0.219603)
+texture = ExtResource("5_klnu4")
+
+[node name="TextureProgressHunger" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -119.0
+offset_right = 464.0
+offset_bottom = 181.0
+scale = Vector2(0.3, 0.3)
+value = 50.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 4
+texture_under = ExtResource("1_1lb0b")
+texture_progress = ExtResource("1_1lb0b")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0.584143, 0.394583, 0.203871, 1)
+
+[node name="PngHunger" type="Sprite2D" parent="TextureProgressHunger"]
+position = Vector2(150, 150)
+scale = Vector2(0.0733253, 0.0698783)
+texture = ExtResource("3_lvlu3")

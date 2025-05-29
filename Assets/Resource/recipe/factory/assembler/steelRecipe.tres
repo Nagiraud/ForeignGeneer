@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://dp78nkhu6r1qv"]
+
+[ext_resource type="Resource" uid="uid://drcaaqajtvj2u" path="res://Assets/Resource/Items/Ores/Coal.tres" id="1_pgwx2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_a71k5"]
+[ext_resource type="Resource" uid="uid://bh0wee65eoi72" path="res://Assets/Resource/Items/Ingots/IronIngot.tres" id="3_0yxl0"]
+[ext_resource type="Resource" uid="uid://cwvogd2381okq" path="res://Assets/Resource/Items/Ingots/SteelBeam.tres" id="4_ercx7"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="5_0m5me"]
+
+[sub_resource type="Resource" id="Resource_k8ypa"]
+script = ExtResource("2_a71k5")
+Resource = ExtResource("1_pgwx2")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_ksj0y"]
+script = ExtResource("2_a71k5")
+Resource = ExtResource("3_0yxl0")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_50mnx"]
+script = ExtResource("2_a71k5")
+Resource = ExtResource("4_ercx7")
+Stack = 2
+
+[resource]
+script = ExtResource("5_0m5me")
+input = [SubResource("Resource_k8ypa"), SubResource("Resource_ksj0y")]
+output = SubResource("Resource_50mnx")
+duration = 3.0

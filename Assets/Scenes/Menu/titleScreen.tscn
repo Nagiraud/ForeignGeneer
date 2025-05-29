@@ -1,0 +1,132 @@
+[gd_scene load_steps=20 format=3 uid="uid://nukq4775resy"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/manager/MenuManager.cs" id="1_48b88"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/UiManager.cs" id="1_o6qr3"]
+[ext_resource type="PackedScene" uid="uid://cu77v5jkyswnn" path="res://Assets/Scenes/UI/Factory/FonderieUi.tscn" id="2_mr7uv"]
+[ext_resource type="PackedScene" uid="uid://ddp7q1ns3jgci" path="res://Assets/Scenes/UI/centrale/CentralUi.tscn" id="3_5ebg7"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/AudioManager.cs" id="3_whhdt"]
+[ext_resource type="PackedScene" uid="uid://pvecjgib4vbr" path="res://Assets/Scenes/UI/Inventory/inventoryUi.tscn" id="4_75oo3"]
+[ext_resource type="PackedScene" uid="uid://bt22jt7gp0bq5" path="res://Assets/Scenes/UI/Inventory/itemCursorUi.tscn" id="5_rckrv"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="6_ngkbe"]
+[ext_resource type="PackedScene" uid="uid://btmrk0ejdndf2" path="res://Assets/Scenes/UI/Recipe/RecipeListUi.tscn" id="7_xpn3d"]
+[ext_resource type="PackedScene" uid="uid://bvoaib2hksqyq" path="res://Assets/Scenes/UI/Inventory/overlayItemInformation.tscn" id="8_u87il"]
+[ext_resource type="PackedScene" uid="uid://csfqa8ppcx5m0" path="res://Assets/Scenes/Menu/MenuOptions.tscn" id="9_v4j20"]
+[ext_resource type="PackedScene" uid="uid://cmxhqperf45w8" path="res://Assets/Scenes/Menu/GameOption.tscn" id="10_mlulu"]
+[ext_resource type="Texture2D" uid="uid://qyyl6kwe4mw5" path="res://Assets/Texture/ui/menu/image.png" id="12_jo58y"]
+[ext_resource type="Texture2D" uid="uid://b57xkacdi6ag7" path="res://Assets/Texture/ui/menu/ForeignGineer_logo_final.png" id="12_q64gf"]
+[ext_resource type="StyleBox" uid="uid://c2qeveib6l40s" path="res://Assets/Texture/ui/menu/hoverBG.tres" id="13_ucg8v"]
+[ext_resource type="StyleBox" uid="uid://bggc85efcyawx" path="res://Assets/Texture/ui/menu/BG.tres" id="14_lryvc"]
+[ext_resource type="AudioStream" uid="uid://dgjnfeanu52rn" path="res://Assets/Resource/sound/101017821-ambient-dark-synthesizer-sci-f.wav" id="15_3dcd4"]
+[ext_resource type="FontFile" uid="uid://ddeqefpn3syh" path="res://Assets/Texture/ui/K.O. Activista Font.ttf" id="15_gyucu"]
+[ext_resource type="PackedScene" uid="uid://c3pat7eqnpbry" path="res://Assets/Prefabs/daltonisme.tscn" id="16_4klya"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48b88")
+
+[node name="UiManager" type="Node" parent="."]
+script = ExtResource("1_o6qr3")
+_uiKeys = ["fonderieUi", "centralUi", "inventoryUi", "itemCursorUi", "slotUi", "recipeListUi", "overlayItemInformation", "GameOption", "MenuOptions"]
+_uiScenes = [ExtResource("2_mr7uv"), ExtResource("3_5ebg7"), ExtResource("4_75oo3"), ExtResource("5_rckrv"), ExtResource("6_ngkbe"), ExtResource("7_xpn3d"), ExtResource("8_u87il"), ExtResource("10_mlulu"), ExtResource("9_v4j20")]
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_jo58y")
+
+[node name="daltonism" parent="." instance=ExtResource("16_4klya")]
+
+[node name="ForeignGineerLogoFinal" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -111.0
+offset_right = 1282.0
+offset_bottom = 1169.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_q64gf")
+expand_mode = 2
+
+[node name="start" type="Button" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 44.0
+offset_top = 252.0
+offset_right = 104.0
+offset_bottom = 283.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gyucu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = ExtResource("13_ucg8v")
+theme_override_styles/normal = ExtResource("14_lryvc")
+action_mode = 0
+text = "Jouer"
+
+[node name="option" type="Button" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 46.0
+offset_top = 319.0
+offset_right = 125.0
+offset_bottom = 367.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gyucu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = ExtResource("13_ucg8v")
+theme_override_styles/normal = ExtResource("14_lryvc")
+text = "Paramètre"
+
+[node name="credit" type="Button" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 44.0
+offset_top = 382.0
+offset_right = 129.0
+offset_bottom = 430.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gyucu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = ExtResource("13_ucg8v")
+theme_override_styles/normal = ExtResource("14_lryvc")
+text = "Crédits
+"
+
+[node name="quit" type="Button" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 44.0
+offset_top = 450.0
+offset_right = 127.0
+offset_bottom = 498.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gyucu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = ExtResource("13_ucg8v")
+theme_override_styles/normal = ExtResource("14_lryvc")
+action_mode = 0
+text = "Quitter
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_3dcd4")
+autoplay = true
+bus = &"BGM"
+script = ExtResource("3_whhdt")
+
+[connection signal="button_down" from="start" to="." method="_onButtonStartDown"]
+[connection signal="button_down" from="option" to="." method="_onOptionButtonDown"]
+[connection signal="button_down" from="credit" to="." method="_onCreditButtonDown"]
+[connection signal="button_down" from="quit" to="." method="_onQuitButtonDown"]

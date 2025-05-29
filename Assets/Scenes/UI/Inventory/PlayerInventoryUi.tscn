@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bojbq0vmc2nhq"]
+
+[ext_resource type="PackedScene" uid="uid://pvecjgib4vbr" path="res://Assets/Scenes/UI/Inventory/inventoryUi.tscn" id="2_10g85"]
+[ext_resource type="PackedScene" uid="uid://c83fqjo4lhfry" path="res://Assets/Scenes/UI/miniGame/CircuitUi.tscn" id="3_gvk1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlq62"]
+bg_color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="PlayerInventoryUi" type="Control"]
+z_index = 2
+layout_mode = 3
+anchor_left = 0.1
+anchor_top = 0.05
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xlq62")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Inventaire" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="InventoryUi" parent="TabContainer/Inventaire" instance=ExtResource("2_10g85")]
+layout_mode = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.4
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Circuit" parent="TabContainer" instance=ExtResource("3_gvk1p")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

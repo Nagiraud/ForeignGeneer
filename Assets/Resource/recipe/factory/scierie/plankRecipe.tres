@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://b6abyjcmug4g4"]
+
+[ext_resource type="Resource" uid="uid://cgc4wdqhtsjay" path="res://Assets/Resource/Items/log.tres" id="1_e2ksh"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_ofa6x"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_tksnf"]
+[ext_resource type="Resource" uid="uid://r66hx7yuyqw4" path="res://Assets/Resource/Items/planks.tres" id="3_qtjgo"]
+
+[sub_resource type="Resource" id="Resource_872be"]
+script = ExtResource("2_tksnf")
+Resource = ExtResource("1_e2ksh")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_d06f0"]
+script = ExtResource("2_tksnf")
+Resource = ExtResource("3_qtjgo")
+Stack = 4
+
+[resource]
+script = ExtResource("1_ofa6x")
+input = [SubResource("Resource_872be")]
+output = SubResource("Resource_d06f0")
+duration = 3.0

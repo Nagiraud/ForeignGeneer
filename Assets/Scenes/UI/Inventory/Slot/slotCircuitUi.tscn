@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkqb1w6ijhgj8"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/slot/CircuitSlotUi.cs" id="1_4wbdw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udxgf"]
+bg_color = Color(0, 0, 0, 0.819608)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.921569, 0.184314, 0.101961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="slotCircuitUi" type="Control" node_paths=PackedStringArray("icon", "background", "countLabel")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_4wbdw")
+icon = NodePath("TextureRect")
+background = NodePath("Panel/TextureRect")
+countLabel = NodePath("Label")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_udxgf")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0.32549)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+vertical_alignment = 1

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ciyjaua6jtpmh"]
+
+[resource]
+albedo_color = Color(0.90462, 0.746024, 0.251311, 1)
+metallic = 0.1
+emission_enabled = true
+emission_energy_multiplier = 1.14
+subsurf_scatter_strength = 0.51

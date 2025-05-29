@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FoodStatic" load_steps=5 format=3 uid="uid://oqrcmx10cv8t"]
+
+[ext_resource type="Texture2D" uid="uid://cq6uhrm0rtwlr" path="res://Assets/Texture/items/icon_Berries.png" id="1_mvqy6"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/FoodStatic.cs" id="2_fdxao"]
+[ext_resource type="Material" uid="uid://b8gpx2y1yi277" path="res://Assets/Model/Nourriture/Berry/ShaderMaterialBerry.tres" id="2_rs1kt"]
+[ext_resource type="AudioStream" uid="uid://f65hjbf3pcdt" path="res://Assets/Model/Nourriture/Berry/EatingSound.wav" id="3_fu4qf"]
+
+[resource]
+script = ExtResource("2_fdxao")
+FeedPower = 1.0
+_maxStack = 99
+_scenePath = "res://Assets/Model/Nourriture/Berry/Bush_Berry.glb"
+_material = ExtResource("2_rs1kt")
+_inventoryIcon = ExtResource("1_mvqy6")
+_description = "Des baies, parfait pour une petite faim !"
+useSoundEffect = ExtResource("3_fu4qf")

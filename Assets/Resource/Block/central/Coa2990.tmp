@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cygoqqhi7v22u"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CentraleStatic.cs" id="1_84hgg"]
+
+[resource]
+script = ExtResource("1_84hgg")
+recipeListPath = "d"
+recipeListUIPath = ""
+centralUIPath = ""
+inputSlotCount = 1
+electricalCost = 50
+pollutionIndex = 10
+durability = 100
+_maxStack = 0

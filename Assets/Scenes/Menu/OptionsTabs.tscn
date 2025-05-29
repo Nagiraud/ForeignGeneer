@@ -1,0 +1,285 @@
+[gd_scene load_steps=5 format=3 uid="uid://b01i7ju5iasof"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/menu/Audio.cs" id="3_dwchj"]
+[ext_resource type="Script" path="res://Assets/Scripts/menu/Video.cs" id="4_nqkou"]
+[ext_resource type="Script" path="res://Assets/Scripts/menu/Controls.cs" id="5_f3alg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovk84"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="soundTab" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[node name="optionVolume" type="VBoxContainer" parent="GridContainer/soundTab"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 51.0
+offset_right = 1016.0
+offset_bottom = 486.0
+script = ExtResource("3_dwchj")
+
+[node name="masterVolume" type="Label" parent="GridContainer/soundTab/optionVolume"]
+layout_mode = 2
+text = "Volume :"
+
+[node name="Master" type="HSlider" parent="GridContainer/soundTab/optionVolume/masterVolume"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 5.0
+offset_right = 441.0
+offset_bottom = 21.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+scrollable = false
+
+[node name="playerVolume" type="Label" parent="GridContainer/soundTab/optionVolume"]
+layout_mode = 2
+text = "Player :"
+
+[node name="SFX" type="HSlider" parent="GridContainer/soundTab/optionVolume/playerVolume"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 6.0
+offset_right = 440.0
+offset_bottom = 22.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="ambiantVolume" type="Label" parent="GridContainer/soundTab/optionVolume"]
+layout_mode = 2
+text = "Ambiance :"
+
+[node name="BGM" type="HSlider" parent="GridContainer/soundTab/optionVolume/ambiantVolume"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 6.0
+offset_right = 441.0
+offset_bottom = 22.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="ressourceVolume" type="Label" parent="GridContainer/soundTab/optionVolume"]
+layout_mode = 2
+text = "ressource :"
+
+[node name="RM" type="HSlider" parent="GridContainer/soundTab/optionVolume/ressourceVolume"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 6.0
+offset_right = 444.0
+offset_bottom = 22.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="videoTab" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[node name="optionVideo" type="VBoxContainer" parent="GridContainer/videoTab"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 972.0
+offset_bottom = 485.0
+script = ExtResource("4_nqkou")
+
+[node name="Label" type="Label" parent="GridContainer/videoTab/optionVideo"]
+layout_mode = 2
+text = "brightness :"
+
+[node name="brightness" type="HSlider" parent="GridContainer/videoTab/optionVideo/Label"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 5.0
+offset_right = 402.0
+offset_bottom = 21.0
+scrollable = false
+
+[node name="Label2" type="Label" parent="GridContainer/videoTab/optionVideo"]
+layout_mode = 2
+text = "full screen :"
+
+[node name="fullscreenButton" type="Button" parent="GridContainer/videoTab/optionVideo/Label2"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 177.0
+offset_bottom = 31.0
+text = "On"
+
+[node name="controlTab" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[node name="optionControl" type="VBoxContainer" parent="GridContainer/controlTab"]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_top = 53.0
+offset_right = 980.0
+offset_bottom = 520.0
+theme_override_constants/separation = 10
+script = ExtResource("5_f3alg")
+
+[node name="forward" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "avancer :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/forward"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+action_mode = 0
+text = "Z"
+
+[node name="backward" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "reculer :"
+label_settings = SubResource("LabelSettings_ovk84")
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/backward"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "S"
+
+[node name="left" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "gauche :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/left"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "Q"
+
+[node name="right" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "droite :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/right"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "D"
+
+[node name="sprint" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "courir :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/sprint"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "Shift"
+
+[node name="jump" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "sauter :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/jump"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "Spacebar"
+
+[node name="crouch" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "s'accroupir :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/crouch"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "Ctrl"
+
+[node name="interact" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "intéragir :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/interact"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "E"
+
+[node name="inventory" type="Label" parent="GridContainer/controlTab/optionControl"]
+layout_mode = 2
+text = "Inventaire :"
+
+[node name="Button" type="Button" parent="GridContainer/controlTab/optionControl/inventory"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 2.0
+offset_right = 231.0
+offset_bottom = 22.0
+toggle_mode = true
+text = "Tab"
+
+[node name="close" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[node name="titleScreen" type="Button" parent="GridContainer"]
+layout_mode = 2
+
+[connection signal="value_changed" from="GridContainer/soundTab/optionVolume/masterVolume/Master" to="GridContainer/soundTab/optionVolume" method="_onMasterVolumeUpdate"]
+[connection signal="value_changed" from="GridContainer/soundTab/optionVolume/playerVolume/SFX" to="GridContainer/soundTab/optionVolume" method="_onSFXUpdate"]
+[connection signal="value_changed" from="GridContainer/soundTab/optionVolume/ambiantVolume/BGM" to="GridContainer/soundTab/optionVolume" method="_onBGMUpdate"]
+[connection signal="value_changed" from="GridContainer/soundTab/optionVolume/ressourceVolume/RM" to="GridContainer/soundTab/optionVolume" method="_onRMUpdate"]
+[connection signal="value_changed" from="GridContainer/videoTab/optionVideo/Label/brightness" to="GridContainer/videoTab/optionVideo" method="_brightnessUpdate"]
+[connection signal="button_down" from="GridContainer/videoTab/optionVideo/Label2/fullscreenButton" to="GridContainer/videoTab/optionVideo" method="_FullscreenToggled"]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/forward/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["forward"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/backward/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["backward"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/left/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["left"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/right/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["right"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/sprint/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["sprint"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/jump/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["jump"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/crouch/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["crouch"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/interact/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["interact"]]
+[connection signal="button_down" from="GridContainer/controlTab/optionControl/inventory/Button" to="GridContainer/controlTab/optionControl" method="_onControlChange" binds= ["inventory"]]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5msdni1uwrnm"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Items/ItemAuSol.cs" id="1_s87gq"]
+[ext_resource type="ArrayMesh" uid="uid://qql0vewvjurv" path="res://Assets/Model/material/plastic.obj" id="2_15o3h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taaqh"]
+albedo_color = Color(0.159874, 0.278038, 0.792466, 1)
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwbg0"]
+size = Vector3(0.788696, 0.2155, 0.849074)
+
+[node name="Node3D" type="StaticBody3D"]
+script = ExtResource("1_s87gq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_15o3h")
+surface_material_override/0 = SubResource("StandardMaterial3D_taaqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305786, -0.00249481, -0.00405741)
+shape = SubResource("BoxShape3D_mwbg0")
+disabled = true

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://cltss3gs32gj6"]
+
+[ext_resource type="Resource" uid="uid://r66hx7yuyqw4" path="res://Assets/Resource/Items/planks.tres" id="1_p5sn2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_xsfwk"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_f6w36"]
+[ext_resource type="Resource" uid="uid://7tnuj2wq5d7e" path="res://Assets/Resource/Block/factory/craftingTable.tres" id="3_jwvq1"]
+
+[sub_resource type="Resource" id="Resource_48fje"]
+script = ExtResource("2_f6w36")
+Resource = ExtResource("1_p5sn2")
+Stack = 4
+
+[sub_resource type="Resource" id="Resource_bw0iv"]
+script = ExtResource("2_f6w36")
+Resource = ExtResource("3_jwvq1")
+Stack = 1
+
+[resource]
+script = ExtResource("1_xsfwk")
+input = [SubResource("Resource_48fje")]
+output = SubResource("Resource_bw0iv")
+duration = 2.0

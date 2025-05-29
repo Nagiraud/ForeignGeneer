@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://dk7oq581ht8mm"]
+
+[ext_resource type="Texture2D" uid="uid://svrm71qoy5iv" path="res://Assets/Texture/items/Parts/iron_sheet.png" id="1_4ay71"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_msnpd"]
+
+[resource]
+resource_name = "IronPlate"
+script = ExtResource("1_msnpd")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_4ay71")
+_description = ""

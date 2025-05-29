@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cygoqqhi7v22u"]
+
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/slotUi.tscn" id="1_3bltu"]
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Central/CentralUi.cs" id="1_dwyjk"]
+
+[resource]
+script = ExtResource("1_dwyjk")
+_slotUi = ExtResource("1_3bltu")

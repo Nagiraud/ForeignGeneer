@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=10 format=3 uid="uid://betqpgypraidr"]
+
+[ext_resource type="Resource" uid="uid://bh0wee65eoi72" path="res://Assets/Resource/Items/Ingots/IronIngot.tres" id="1_h17ku"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_namxi"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_ai7uf"]
+[ext_resource type="Resource" uid="uid://c4304nu2rd20a" path="res://Assets/Resource/Items/Ingots/GoldIngot.tres" id="3_ud5st"]
+
+[sub_resource type="Resource" id="Resource_kod2t"]
+script = ExtResource("2_ai7uf")
+Resource = ExtResource("1_h17ku")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_k8j7o"]
+script = ExtResource("2_ai7uf")
+Resource = ExtResource("1_h17ku")
+Stack = 1
+
+[sub_resource type="Resource" id="Resource_3of6k"]
+script = ExtResource("2_ai7uf")
+Resource = ExtResource("1_h17ku")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_uf1o4"]
+script = ExtResource("2_ai7uf")
+Resource = ExtResource("1_h17ku")
+Stack = 2
+
+[sub_resource type="Resource" id="Resource_7iej1"]
+script = ExtResource("2_ai7uf")
+Resource = ExtResource("3_ud5st")
+Stack = 1
+
+[resource]
+script = ExtResource("1_namxi")
+input = [SubResource("Resource_kod2t"), SubResource("Resource_k8j7o"), SubResource("Resource_3of6k"), SubResource("Resource_uf1o4")]
+output = SubResource("Resource_7iej1")
+duration = 5.0

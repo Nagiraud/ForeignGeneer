@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt22jt7gp0bq5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Inventory/CurrentCursorItem.cs" id="1_nkvr4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxyo3"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="SlotBase" type="Control"]
+show_behind_parent = true
+z_index = 10
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+mouse_default_cursor_shape = 6
+script = ExtResource("1_nkvr4")
+
+[node name="Icon" type="Sprite2D" parent="."]
+show_behind_parent = true
+
+[node name="CountLabel" type="Label" parent="."]
+show_behind_parent = true
+layout_mode = 1
+offset_left = 5.0
+offset_right = 39.0
+offset_bottom = 42.0
+scale = Vector2(0.7, 0.7)
+text = "99"
+label_settings = SubResource("LabelSettings_vxyo3")

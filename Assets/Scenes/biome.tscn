@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://wfrkvkb6jsss"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aelk8"]
+
+[node name="Biome" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_aelk8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../StaticBody3D/CollisionShape3D")
+
+[node name="ResourceSpawnArea" type="Node3D" parent="."]

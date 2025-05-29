@@ -1,0 +1,252 @@
+[gd_scene load_steps=9 format=3 uid="uid://c83fqjo4lhfry"]
+
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="1_1nlaq"]
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/MiniGame/CircuitUi.cs" id="1_cesen"]
+[ext_resource type="PackedScene" uid="uid://bkqb1w6ijhgj8" path="res://Assets/Scenes/UI/Inventory/Slot/slotCircuitUi.tscn" id="2_okr47"]
+[ext_resource type="PackedScene" uid="uid://sq3mjfb16uya" path="res://Assets/Scenes/UI/Inventory/InventoryBottom.tscn" id="2_vcft0"]
+
+[sub_resource type="Theme" id="Theme_bs0v5"]
+default_base_scale = 10.9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg66y"]
+bg_color = Color(0.767048, 0.658874, 0.538916, 1)
+border_color = Color(0.656314, 0.212507, 0.145924, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jt4j"]
+bg_color = Color(0.344076, 0.344076, 0.344076, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.201527, 0.201527, 0.201526, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtmmb"]
+bg_color = Color(0.127646, 0.306964, 0.177766, 1)
+
+[node name="Circuit" type="Control" node_paths=PackedStringArray("_inventoryBottomUi", "_craftButton", "_changeButton", "_outputSlotUi", "_slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cesen")
+_inventoryBottomUi = NodePath("Node/InventoryBottom")
+_craftButton = NodePath("Craft/Craft/Button")
+_changeButton = NodePath("Craft/Reset/Button")
+_outputSlotUi = NodePath("Output/SlotUI")
+_slots = []
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Output" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.4
+grow_horizontal = 0
+
+[node name="SlotUI" parent="Output" instance=ExtResource("1_1nlaq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Label" type="Label" parent="Output"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Sortie"
+
+[node name="Craft" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reset" type="Control" parent="Craft"]
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Craft/Reset"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bs0v5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg66y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jt4j")
+text = "Changer"
+
+[node name="Label" type="Label" parent="Craft/Reset"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Changer de Craft :"
+horizontal_alignment = 1
+
+[node name="Craft" type="Control" parent="Craft"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Craft/Craft"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bs0v5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cg66y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jt4j")
+text = "Craft"
+
+[node name="Label" type="Label" parent="Craft/Craft"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Souder le circuit :"
+horizontal_alignment = 1
+
+[node name="circuitSlot" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jtmmb")
+
+[node name="VFlowContainer" type="VBoxContainer" parent="circuitSlot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -32.0
+offset_right = 253.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(181.4, -134.4)
+alignment = 1
+
+[node name="slots" type="HBoxContainer" parent="circuitSlot/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ColorRect5" type="ColorRect" parent="circuitSlot/VFlowContainer/slots"]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.86, 0.847387, 0.1032, 1)
+
+[node name="slotCircuitUi" parent="circuitSlot/VFlowContainer/slots" instance=ExtResource("2_okr47")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="circuitSlot/VFlowContainer/slots"]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.86, 0.847387, 0.1032, 1)
+
+[node name="slotCircuitUi2" parent="circuitSlot/VFlowContainer/slots" instance=ExtResource("2_okr47")]
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="circuitSlot/VFlowContainer/slots"]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.86, 0.847387, 0.1032, 1)
+
+[node name="slotCircuitUi3" parent="circuitSlot/VFlowContainer/slots" instance=ExtResource("2_okr47")]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="circuitSlot/VFlowContainer/slots"]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.86, 0.847387, 0.1032, 1)
+
+[node name="slotCircuitUi4" parent="circuitSlot/VFlowContainer/slots" instance=ExtResource("2_okr47")]
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="circuitSlot/VFlowContainer/slots"]
+custom_minimum_size = Vector2(50, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.86, 0.847387, 0.1032, 1)
+
+[node name="Node" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.05
+anchor_top = 0.65
+anchor_right = 0.75
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InventoryBottom" parent="Node" instance=ExtResource("2_vcft0")]
+layout_mode = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="button_down" from="Craft/Reset/Button" to="." method="onChangeButtonPressed"]
+[connection signal="button_down" from="Craft/Craft/Button" to="." method="onCraftButtonPressed"]

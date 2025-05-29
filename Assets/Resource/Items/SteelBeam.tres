@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=2 format=3 uid="uid://cwvogd2381okq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="2_eg24f"]
+
+[resource]
+resource_name = "SteelBeam"
+script = ExtResource("2_eg24f")
+_maxStack = 99
+_scenePath = "res://Assets/Prefabs/Ingots/SteelBeam.tscn"
+_description = ""

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ed0e8q3jg2j4"]
+
+[ext_resource type="ArrayMesh" uid="uid://n5j8sk3vx8ka" path="res://Assets/Model/Ores/coal.obj" id="1_xwbr7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_labx6"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Coal" type="Node3D"]
+
+[node name="Coal" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xwbr7")
+surface_material_override/0 = SubResource("StandardMaterial3D_labx6")

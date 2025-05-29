@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8vurq8pm0g60"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Recipe/CraftingRecipeChoiceUi.cs" id="1_qwf4x"]
+[ext_resource type="PackedScene" uid="uid://draq163aflllo" path="res://Assets/Scenes/UI/Inventory/Slot/MiniSlotUi.tscn" id="2_8bu61"]
+
+[node name="Recipe" type="Control" node_paths=PackedStringArray("_outputRecipeChoiceUi", "_gridContainer", "_nameLabel", "button")]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 3
+anchor_right = 0.176
+anchor_bottom = 0.128
+offset_right = -2.75201
+offset_bottom = -2.944
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+script = ExtResource("1_qwf4x")
+_outputRecipeChoiceUi = NodePath("Background/OutputMiniSlotUi")
+_gridContainer = NodePath("Background/GridContainer")
+_slotUi = ExtResource("2_8bu61")
+_nameLabel = NodePath("Background/NameItem")
+button = NodePath("Background/Button")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.728822, 0.728822, 0.728822, 1)
+
+[node name="NameItem" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "test"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Background"]
+layout_mode = 1
+anchor_left = 0.8
+anchor_top = 0.5
+anchor_right = 0.98
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="fleche" type="Label" parent="Background/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 15.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "->"
+horizontal_alignment = 1
+
+[node name="TextureItem" type="TextureRect" parent="Background/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1, 0.981155)
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="Background"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="GridContainer" type="GridContainer" parent="Background"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OutputMiniSlotUi" parent="Background" instance=ExtResource("2_8bu61")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 0.0
+offset_bottom = 8.0
+grow_horizontal = 0

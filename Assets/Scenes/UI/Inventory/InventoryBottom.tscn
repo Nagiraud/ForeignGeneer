@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://sq3mjfb16uya"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Inventory/InventoryBottomUi.cs" id="1_cmp3e"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="2_3ahh4"]
+[ext_resource type="PackedScene" uid="uid://cqcwsd4waorqb" path="res://Assets/Scenes/UI/Inventory/Slot/slotUiBlock.tscn" id="3_c8q1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkgs1"]
+bg_color = Color(0.290196, 0.290196, 0.290196, 1)
+
+[node name="InventoryBottom" type="PanelContainer" node_paths=PackedStringArray("_flowContainer")]
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qkgs1")
+script = ExtResource("1_cmp3e")
+_flowContainer = NodePath("ScrollContainer/FlowContainer")
+_slotUi = ExtResource("2_3ahh4")
+_slotUiBlocked = ExtResource("3_c8q1w")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="FlowContainer" type="FlowContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

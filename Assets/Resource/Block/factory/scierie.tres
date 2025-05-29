@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CraftingFactoryStatic" load_steps=4 format=3 uid="uid://h7jtwmxvx26o"]
+
+[ext_resource type="Resource" uid="uid://bk3orfrl56u1j" path="res://Assets/Resource/recipe/factory/scierie/fondationRecipes.tres" id="1_4uyf1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CraftingFactoryStatic.cs" id="1_c54ut"]
+[ext_resource type="Resource" uid="uid://b6abyjcmug4g4" path="res://Assets/Resource/recipe/factory/scierie/plankRecipe.tres" id="2_0vndc"]
+
+[resource]
+script = ExtResource("1_c54ut")
+recipeList = Array[Object]([ExtResource("1_4uyf1"), ExtResource("2_0vndc")])
+electricalCost = 0
+pollutionIndex = 0
+tier = 0
+_maxStack = 0
+_scenePath = ""
+_description = ""

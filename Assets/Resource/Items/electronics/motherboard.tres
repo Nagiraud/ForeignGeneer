@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://cwueaxanchbqm"]
+
+[ext_resource type="Texture2D" uid="uid://1uo4lm0kac4g" path="res://Assets/Texture/items/electronics/logic_circuit.png" id="1_0ob84"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_uabjm"]
+
+[resource]
+resource_name = "motherboard"
+script = ExtResource("1_uabjm")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_0ob84")
+_description = ""

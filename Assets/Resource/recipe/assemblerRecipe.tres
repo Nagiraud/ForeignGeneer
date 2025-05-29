@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=11 format=3 uid="uid://cuqw2qdcl8eqg"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="1_7r08g"]
+[ext_resource type="Resource" uid="uid://dk7oq581ht8mm" path="res://Assets/Resource/Items/Parts/IronPlate.tres" id="1_jdilh"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_mjn1k"]
+[ext_resource type="Resource" uid="uid://buyrurxe32h8w" path="res://Assets/Resource/Items/Parts/Plastic.tres" id="3_ljq5k"]
+[ext_resource type="Resource" uid="uid://qeurt0wcljsl" path="res://Assets/Resource/Items/Parts/ironRod.tres" id="4_e1tv7"]
+[ext_resource type="Resource" uid="uid://dmvxbgok62ndk" path="res://Assets/Resource/Block/factory/assembler.tres" id="5_of861"]
+
+[sub_resource type="Resource" id="Resource_5ptn0"]
+script = ExtResource("2_mjn1k")
+Resource = ExtResource("1_jdilh")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_7viss"]
+script = ExtResource("2_mjn1k")
+Resource = ExtResource("3_ljq5k")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_t5k05"]
+script = ExtResource("2_mjn1k")
+Resource = ExtResource("4_e1tv7")
+Stack = 4
+
+[sub_resource type="Resource" id="Resource_l2snd"]
+script = ExtResource("2_mjn1k")
+Resource = ExtResource("5_of861")
+Stack = 1
+
+[resource]
+script = ExtResource("1_7r08g")
+input = [SubResource("Resource_5ptn0"), SubResource("Resource_7viss"), SubResource("Resource_t5k05")]
+output = SubResource("Resource_l2snd")
+duration = 3.0

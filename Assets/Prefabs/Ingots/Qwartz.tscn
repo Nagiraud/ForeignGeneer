@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://boeykrygcm5pg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cgwc13g711usy" path="res://Assets/Model/Ingots/qwartz.obj" id="1_th371"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/ItemAuSol.cs" id="2_ym27s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taaqh"]
+albedo_color = Color(0.916744, 0.593684, 0.659607, 1)
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwbg0"]
+size = Vector3(0.428467, 0.287811, 0.393616)
+
+[node name="Node3D" type="StaticBody3D"]
+script = ExtResource("2_ym27s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_th371")
+surface_material_override/0 = SubResource("StandardMaterial3D_taaqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00866695, 0.0231476, 0.0121154)
+shape = SubResource("BoxShape3D_mwbg0")

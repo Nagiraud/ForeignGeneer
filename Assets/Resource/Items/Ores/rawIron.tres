@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://cpmlfih4ic7v"]
+
+[ext_resource type="Texture2D" uid="uid://cpesmi1i2dxfm" path="res://Assets/Texture/items/Ores/raw_iron.png" id="1_favle"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_w6t5a"]
+
+[resource]
+resource_name = "rawIron"
+script = ExtResource("1_w6t5a")
+_maxStack = 99
+_scenePath = ""
+_inventoryIcon = ExtResource("1_favle")
+_description = ""

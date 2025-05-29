@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://cgc4wdqhtsjay"]
+
+[ext_resource type="Texture2D" uid="uid://c8vx47s7d4qap" path="res://Assets/Texture/items/icon_log.png" id="1_ivxtr"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_rnfjw"]
+
+[resource]
+resource_name = "Log"
+script = ExtResource("1_rnfjw")
+_maxStack = 0
+_scenePath = ""
+_inventoryIcon = ExtResource("1_ivxtr")
+_description = ""

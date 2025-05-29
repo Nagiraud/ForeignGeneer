@@ -1,0 +1,49 @@
+[gd_scene load_steps=21 format=3 uid="uid://c6xr5ux6th5oq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/manager/UiManager.cs" id="3_a3ua0"]
+[ext_resource type="PackedScene" uid="uid://btmrk0ejdndf2" path="res://Assets/Scenes/UI/Recipe/RecipeListUi.tscn" id="4_iqjgk"]
+[ext_resource type="PackedScene" uid="uid://cu77v5jkyswnn" path="res://Assets/Scenes/UI/Factory/FonderieUi.tscn" id="5_ddexw"]
+[ext_resource type="PackedScene" uid="uid://ddp7q1ns3jgci" path="res://Assets/Scenes/UI/centrale/CentralUi.tscn" id="6_pllps"]
+[ext_resource type="PackedScene" uid="uid://bojbq0vmc2nhq" path="res://Assets/Scenes/UI/Inventory/PlayerInventoryUi.tscn" id="6_t0fjt"]
+[ext_resource type="PackedScene" uid="uid://bt22jt7gp0bq5" path="res://Assets/Scenes/UI/Inventory/itemCursorUi.tscn" id="7_qfv7a"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/InputManager.cs" id="8_a14bf"]
+[ext_resource type="PackedScene" uid="uid://ojau7ov2vb5r" path="res://Assets/Scenes/UI/Inventory/Slot/slotUi.tscn" id="8_snqcd"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/InventoryManager.cs" id="9_tqnk7"]
+[ext_resource type="PackedScene" uid="uid://bvoaib2hksqyq" path="res://Assets/Scenes/UI/Inventory/overlayItemInformation.tscn" id="10_h7g1s"]
+[ext_resource type="Resource" uid="uid://bh0wee65eoi72" path="res://Assets/Resource/Items/Ingots/IronIngot.tres" id="10_lix3d"]
+[ext_resource type="PackedScene" uid="uid://cmxhqperf45w8" path="res://Assets/Scenes/Menu/GameOption.tscn" id="10_lj37u"]
+[ext_resource type="PackedScene" uid="uid://bo8sap88s0lgi" path="res://Assets/Scenes/UI/centrale/solarUi.tscn" id="11_4hqb7"]
+[ext_resource type="Resource" uid="uid://ojkf6c4xovdt" path="res://Assets/Resource/Block/central/BiomasCentral.tres" id="12_r8hvi"]
+[ext_resource type="PackedScene" uid="uid://igq70ebc8pcg" path="res://Assets/Scenes/UI/Factory/CraftingTableUi.tscn" id="12_t0n70"]
+[ext_resource type="Resource" uid="uid://bibgkd4auq35e" path="res://Assets/Resource/Items/pickaxe.tres" id="16_ju7om"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/InterractionManager.cs" id="19_8bcaf"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/MiniGameManager.cs" id="19_qsjdc"]
+[ext_resource type="Resource" uid="uid://betqpgypraidr" path="res://Assets/Resource/recipe/circuit/c1.tres" id="20_o34gw"]
+[ext_resource type="Script" path="res://Assets/Scripts/manager/SpawnerManager.cs" id="21_je1ll"]
+
+[node name="Manager" type="Node"]
+
+[node name="UiManager" type="Node" parent="."]
+script = ExtResource("3_a3ua0")
+_uiKeys = ["fonderieUi", "centralUi", "inventoryUi", "itemCursorUi", "slotUi", "recipeListUi", "overlayItemInformation", "GameOption", "windUi", "craftingTableUi"]
+_uiScenes = [ExtResource("5_ddexw"), ExtResource("6_pllps"), ExtResource("6_t0fjt"), ExtResource("7_qfv7a"), ExtResource("8_snqcd"), ExtResource("4_iqjgk"), ExtResource("10_h7g1s"), ExtResource("10_lj37u"), ExtResource("11_4hqb7"), ExtResource("12_t0n70")]
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("8_a14bf")
+
+[node name="InventoryManager" type="Node" parent="."]
+script = ExtResource("9_tqnk7")
+testItem = ExtResource("10_lix3d")
+testItem2 = ExtResource("16_ju7om")
+testItem3 = ExtResource("12_r8hvi")
+
+[node name="InterractionManager" type="Node" parent="."]
+script = ExtResource("19_8bcaf")
+
+[node name="MiniGameManager" type="Node" parent="."]
+script = ExtResource("19_qsjdc")
+listRecipe = [ExtResource("20_o34gw")]
+
+[node name="Node" type="Node3D" parent="." node_paths=PackedStringArray("_manager")]
+script = ExtResource("21_je1ll")
+_manager = NodePath("..")

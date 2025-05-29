@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2y0l5pql3pqs"]
+
+[ext_resource type="ArrayMesh" uid="uid://cv8beeoom08y1" path="res://Assets/Model/Ingots/ingot.obj" id="1_81j6y"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/ItemAuSol.cs" id="1_gvc5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taaqh"]
+albedo_color = Color(0.135353, 0.117493, 0.117291, 1)
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwbg0"]
+size = Vector3(0.770264, 0.119995, 0.281982)
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(1.02181, 0, 0, 0, 1.02181, 0, 0, 0, 1.02181, 0, 0, 0)
+script = ExtResource("1_gvc5x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = ExtResource("1_81j6y")
+surface_material_override/0 = SubResource("StandardMaterial3D_taaqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00695801, 6.10352e-05, -0.00109863)
+shape = SubResource("BoxShape3D_mwbg0")

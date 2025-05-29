@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CraftingFactoryStatic" load_steps=12 format=3 uid="uid://ckgr8ecc1n3kr"]
+
+[ext_resource type="Resource" uid="uid://cljw2umhmxk7" path="res://Assets/Resource/recipe/factory/fonderie/copperRecipe.tres" id="1_ody2c"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CraftingFactoryStatic.cs" id="1_xonqx"]
+[ext_resource type="Resource" uid="uid://cn77hdltbsnd3" path="res://Assets/Resource/recipe/factory/fonderie/ironRecipe.tres" id="2_ghk85"]
+[ext_resource type="Resource" uid="uid://crnlbjdoekmte" path="res://Assets/Resource/recipe/factory/fonderie/goldRecipe.tres" id="3_a2okc"]
+[ext_resource type="Resource" uid="uid://b76wcrb8mlkfb" path="res://Assets/Resource/recipe/factory/fonderie/siliconRecipe.tres" id="4_e67vc"]
+[ext_resource type="Resource" uid="uid://b6abyjcmug4g4" path="res://Assets/Resource/recipe/factory/scierie/plankRecipe.tres" id="5_pwvxy"]
+[ext_resource type="Resource" uid="uid://dppi11vmi7o74" path="res://Assets/Resource/recipe/factory/constructeur/ironPlateRecipe.tres" id="6_wr140"]
+[ext_resource type="Resource" uid="uid://be5lbo1k70v6m" path="res://Assets/Resource/recipe/factory/constructeur/ironRodRecipe.tres" id="7_skem4"]
+[ext_resource type="Resource" uid="uid://hl4ngqly0ugg" path="res://Assets/Resource/recipe/factory/constructeur/screwRecipe.tres" id="8_2r3hw"]
+[ext_resource type="Resource" uid="uid://bf1wyfkyi0dws" path="res://Assets/Resource/recipe/factory/constructeur/copperWireRecipe.tres" id="9_lr88n"]
+[ext_resource type="Resource" uid="uid://t32aacuurs0o" path="res://Assets/Resource/recipe/pickaxeRecipe.tres" id="10_rghk2"]
+
+[resource]
+script = ExtResource("1_xonqx")
+recipeList = Array[Object]([ExtResource("1_ody2c"), ExtResource("2_ghk85"), ExtResource("3_a2okc"), ExtResource("4_e67vc"), ExtResource("5_pwvxy"), ExtResource("6_wr140"), ExtResource("7_skem4"), ExtResource("8_2r3hw"), ExtResource("9_lr88n"), ExtResource("10_rghk2")])
+electricalCost = 0
+pollutionIndex = 0
+tier = 0
+_maxStack = 0
+_scenePath = ""
+_description = ""

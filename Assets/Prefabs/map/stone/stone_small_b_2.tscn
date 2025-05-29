@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d00fqevl566m3"]
+
+[ext_resource type="PackedScene" uid="uid://cbmg34t21ddcb" path="res://Assets/Model/map/stone_smallB.glb" id="1_khdeg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n87hi"]
+size = Vector3(1.23386, 0.834839, 1.22412)
+
+[node name="stone_smallB2" instance=ExtResource("1_khdeg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/stone_smallB" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/stone_smallB/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0309582, 0.423685, 0.112061)
+shape = SubResource("BoxShape3D_n87hi")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4kum67w04bia"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Block/playerStructure/factory/CraftingTable.cs" id="1_4dv5u"]
+[ext_resource type="Resource" uid="uid://7tnuj2wq5d7e" path="res://Assets/Resource/Block/factory/craftingTable.tres" id="2_i360k"]
+[ext_resource type="ArrayMesh" uid="uid://bbribvsj56alk" path="res://Assets/Model/block/factory/craftingTable.obj" id="3_crxh5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_660ou"]
+size = Vector3(1.14377, 1.2207, 0.613403)
+
+[node name="CraftingTable" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521425, 0)
+script = ExtResource("1_4dv5u")
+_craftingUiName = "craftingTableUi"
+itemStatic = ExtResource("2_i360k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1889, 0.110352, 0.0327759)
+shape = SubResource("BoxShape3D_660ou")
+
+[node name="CraftingTable" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.36348, 0)
+mesh = ExtResource("3_crxh5")

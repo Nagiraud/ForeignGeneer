@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp60naod7ksmm"]
+
+[ext_resource type="PackedScene" uid="uid://brwt5bel55y2m" path="res://Assets/Model/map/statue_obelisk.glb" id="1_6gd4r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgytc"]
+size = Vector3(1, 4.31029, 0.808716)
+
+[node name="statue_obelisk2" instance=ExtResource("1_6gd4r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/statue_obelisk" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/statue_obelisk/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16787, 0.00543213)
+shape = SubResource("BoxShape3D_pgytc")

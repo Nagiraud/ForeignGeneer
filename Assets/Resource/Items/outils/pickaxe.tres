@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStatic" load_steps=3 format=3 uid="uid://dh5deefslcxx0"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic.cs" id="1_h6dfu"]
+[ext_resource type="Texture2D" uid="uid://8odsnk2784xn" path="res://Assets/Texture/items/outils/icon_pickaxe.png" id="1_nrn5y"]
+
+[resource]
+resource_name = "Pickaxe"
+script = ExtResource("1_h6dfu")
+_maxStack = 1
+_scenePath = ""
+_inventoryIcon = ExtResource("1_nrn5y")
+_description = ""

@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqcwsd4waorqb"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/slot/SlotUiBlocked.cs" id="1_itful"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vdlo"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0633063, 0.0995179, 0.29759, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxyo3"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="SlotUIBlocked" type="Control"]
+physics_interpolation_mode = 0
+z_index = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchor_right = 0.05
+anchor_bottom = 0.1
+offset_right = -0.512001
+offset_bottom = -0.152008
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_itful")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vdlo")
+
+[node name="BackIcon" type="TextureRect" parent="Background"]
+modulate = Color(1, 1, 1, 0.176471)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="CountLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -27.0
+offset_right = 4.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.7, 0.540833)
+text = "99"
+label_settings = SubResource("LabelSettings_vxyo3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

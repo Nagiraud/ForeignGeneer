@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddcfjdnatm6ym"]
+
+[ext_resource type="PackedScene" uid="uid://0hjgq6n4mowf" path="res://Assets/Model/map/tree_small.glb" id="1_u2tj2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Block/playerStructure/BaseStructure.cs" id="2_fqgqt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7fss"]
+size = Vector3(0.436096, 5.31392, 0.474609)
+
+[node name="tree_small2" groups=["AXE"] instance=ExtResource("1_u2tj2")]
+script = ExtResource("2_fqgqt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tmpParent/tree_small" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent/tree_small/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00112915, 2.70321, 0.0205078)
+shape = SubResource("BoxShape3D_i7fss")

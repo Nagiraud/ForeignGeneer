@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://c7w5hnibssnwa"]
+
+[ext_resource type="Resource" uid="uid://dk7oq581ht8mm" path="res://Assets/Resource/Items/Parts/IronPlate.tres" id="1_ys5rq"]
+[ext_resource type="Script" path="res://Assets/Scripts/Items/StackItem.cs" id="2_a554h"]
+[ext_resource type="Resource" uid="uid://qeurt0wcljsl" path="res://Assets/Resource/Items/Parts/ironRod.tres" id="3_hadyi"]
+[ext_resource type="Resource" uid="uid://blqmnqkdcbi7l" path="res://Assets/Resource/Block/factory/Fonderie.tres" id="4_8rbyf"]
+[ext_resource type="Script" path="res://Assets/Scripts/Static/recipe/Recipe.cs" id="5_ry7nf"]
+
+[sub_resource type="Resource" id="Resource_sw3nv"]
+script = ExtResource("2_a554h")
+Resource = ExtResource("1_ys5rq")
+Stack = 4
+
+[sub_resource type="Resource" id="Resource_wbjva"]
+script = ExtResource("2_a554h")
+Resource = ExtResource("3_hadyi")
+Stack = 3
+
+[sub_resource type="Resource" id="Resource_1a8n8"]
+script = ExtResource("2_a554h")
+Resource = ExtResource("4_8rbyf")
+Stack = 1
+
+[resource]
+script = ExtResource("5_ry7nf")
+input = [SubResource("Resource_sw3nv"), SubResource("Resource_wbjva")]
+output = SubResource("Resource_1a8n8")
+duration = 3.0

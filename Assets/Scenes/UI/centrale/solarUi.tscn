@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo8sap88s0lgi"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Interface/Central/WindUi.cs" id="1_0figc"]
+
+[node name="solarUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0figc")
+
+[node name="machine" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="Panel" parent="machine"]
+custom_minimum_size = Vector2(576, 518)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close" type="Button" parent="machine"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+z_index = 10
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.2
+offset_right = 0.799988
+offset_bottom = 43.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "X"
+
+[node name="ProgressBar" type="ProgressBar" parent="machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.6
+anchor_right = 0.6
+anchor_bottom = 0.6
+offset_left = -2.0
+offset_top = -13.5
+offset_right = 2.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quantity" type="Label" parent="machine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = -172.8
+offset_top = -129.6
+offset_right = 164.2
+offset_bottom = -106.6
+grow_horizontal = 2
+grow_vertical = 2
+text = "Puissance : 0 kW/s|| Électricité totale : 0 kW/s"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="machine/close" to="." method="close"]

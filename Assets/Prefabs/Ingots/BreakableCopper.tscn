@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://ktfq1ucdt8rt"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Items/BreakableResource.cs" id="1_rdbgr"]
+[ext_resource type="ArrayMesh" uid="uid://k80s4xmgwouc" path="res://Assets/Model/pierre_resource.obj" id="1_upmjh"]
+[ext_resource type="Resource" uid="uid://bn5xwvb6hrhvq" path="res://Assets/Resource/Items/Ingots/CopperIngotBreakable.tres" id="2_f2t1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt5wn"]
+albedo_color = Color(0.507557, 0.502559, 0.475656, 1)
+heightmap_scale = 5.215
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p37c5"]
+radius = 0.413172
+
+[sub_resource type="SphereMesh" id="SphereMesh_mq7np"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kywt8"]
+albedo_color = Color(0.667604, 0.32872, 0.195109, 1)
+
+[node name="CopperOre" type="StaticBody3D"]
+script = ExtResource("1_rdbgr")
+_resourceStatic = ExtResource("2_w4qk8")
+RespawnTimer = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.351125, 0, 0, 0, 0.351125, 0, 0, 0, 0.351125, 0.00318667, 0, -0.000541687)
+mesh = ExtResource("1_upmjh")
+surface_material_override/0 = SubResource("StandardMaterial3D_tt5wn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.984412, 0, 0, 0, 0.984412, 0, 0, 0, 0.984412, 0, 0.0544863, 0)
+shape = SubResource("SphereShape3D_p37c5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.112078, 0, 0, 0, 0.112078, 0, 0, 0, 0.112078, -0.0644095, 0.355447, 0.215945)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.112078, 0, 0, 0, 0.112078, 0, 0, 0, 0.112078, 0.204153, 0.377731, 0.120153)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25457, 0, 0, 0, 0.25457, 0, 0, 0, 0.25457, 0.064162, 0.377731, -0.0485567)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.112078, 0, 0, 0, 0.112078, 0, 0, 0, 0.112078, 0.303273, 0.245538, -0.129337)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.112078, 0, 0, 0, 0.112078, 0, 0, 0, 0.112078, 0.130046, 0.306346, -0.305992)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0804592, 0, 0, 0, 0.0804592, 0, 0, 0, 0.0804592, -0.224065, 0.314944, -0.0606652)
+mesh = SubResource("SphereMesh_mq7np")
+surface_material_override/0 = SubResource("StandardMaterial3D_kywt8")

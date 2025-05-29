@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CraftingFactoryStatic" load_steps=7 format=3 uid="uid://5os7fkistf63"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Static/ItemStatic/CraftingFactoryStatic.cs" id="1_7maou"]
+[ext_resource type="Resource" uid="uid://cpjw2s3us2qup" path="res://Assets/Resource/recipe/factory/constructeur/steelRod.tres" id="1_owhj0"]
+[ext_resource type="Resource" uid="uid://hl4ngqly0ugg" path="res://Assets/Resource/recipe/factory/constructeur/screwRecipe.tres" id="2_d8cui"]
+[ext_resource type="Resource" uid="uid://be5lbo1k70v6m" path="res://Assets/Resource/recipe/factory/constructeur/ironRodRecipe.tres" id="3_68ngq"]
+[ext_resource type="Resource" uid="uid://dppi11vmi7o74" path="res://Assets/Resource/recipe/factory/constructeur/ironPlateRecipe.tres" id="4_pmsbh"]
+[ext_resource type="Resource" uid="uid://bf1wyfkyi0dws" path="res://Assets/Resource/recipe/factory/constructeur/copperWireRecipe.tres" id="5_8r5ye"]
+
+[resource]
+script = ExtResource("1_7maou")
+recipeList = Array[Object]([ExtResource("1_owhj0"), ExtResource("2_d8cui"), ExtResource("3_68ngq"), ExtResource("4_pmsbh"), ExtResource("5_8r5ye")])
+electricalCost = 0
+pollutionIndex = 0
+tier = 0
+_maxStack = 0
+_scenePath = ""
+_description = ""
