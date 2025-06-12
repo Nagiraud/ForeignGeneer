@@ -1,7 +1,7 @@
-# Nom du Projet
+# ForeignGeneer
 
 ForeignGeneer est un projet réalisé dans le cadre du projet final de 2ème année du BUT informatique du Puy-en-Velay. 
-Il s'agit d'un jeu d'exploration qui pousse les joueurs à se soucier de l'impact sur l'environnement.
+Il s'agit d'un jeu d'exploration, inspiré de Satisfactory et Minecraft, qui pousse les joueurs à se soucier de l'impact sur l'environnement.
 
 ## Table des Matières
 
