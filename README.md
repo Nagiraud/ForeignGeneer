@@ -36,5 +36,5 @@ Cependant, la construction des machines est très polluante, et si vous ne voule
 
 
 ## Contact
-Jeu développé par l'équiipe ForeignGeneer
+Jeu développé par l'équipe ForeignGeneer
   
